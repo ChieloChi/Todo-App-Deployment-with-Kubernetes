@@ -25,9 +25,11 @@ def create_app(test_config=None):
     cors.init_app(app)
     jwt.init_app(app)
 
-    api.register_blueprint(auth_route, url_prefix="/api/v1")
-    api.register_blueprint(user_route, url_prefix="/api/v1")
-    api.register_blueprint(tag_route, url_prefix="/api/v1")
-    api.register_blueprint(task_route, url_prefix="/api/v1")
+   
+app.register_blueprint(auth_route, url_prefix="/api/v1")
+app.register_blueprint(user_route, url_prefix="/api/v1")
+app.register_blueprint(tag_route, url_prefix="/api/v1")
+app.register_blueprint(task_route, url_prefix="/api/v1")
+
 
     return app
